@@ -1,0 +1,25 @@
+name: Lint & build
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ 16, 18, 20 ]
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node }}
+    - name: Install dependencies on Node v${{ matrix.node }}
+      run: npm install --ci
+    - name: Lint on Node v${{ matrix.node }}
+      run: npm run lint
+    - name: Check if project builds on Node v${{ matrix.node }}
+      run: npm run build

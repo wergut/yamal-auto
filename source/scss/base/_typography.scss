@@ -1,0 +1,84 @@
+* {
+  font-family: $--font-default;
+}
+
+h1, .h1 {
+  font-family: $--font-default;
+}
+h2 ,.h2 {
+  font-family: $--font-default;
+  color: $--color-default;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 112%;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+h3, .h3 {
+  font-family: $--font-default;
+  color: $--color-default;
+  font-size: 46px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 112%;
+  text-transform: uppercase;
+}
+h4 .h4 {
+  font-family: $--font-default;
+}
+h5, .h5 {
+  font-family: $--font-default;
+}
+h6, .h6 {
+  font-family: $--font-default;
+}
+
+a {
+  font-family: $--font-default;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+p {
+  font-family: $--font-default;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  color: $--color-default;
+
+  span {
+    color: $--color-blue;
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: 20px;
+  }
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  li {
+    font-family: $--font-default;
+  }
+}
+
+.section-title {
+  color: $--color-default;
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  span {
+    color: $--color-blue;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+}

@@ -1,0 +1,31 @@
+.footer-nav {
+
+  ul {
+
+    li {
+      display: flex;
+
+      &:not(:last-of-type) {
+        margin-bottom: 10px;
+      }
+
+      a {
+        color: $--color-default;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
+        &:hover {
+          color: $--color-blue;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1660px) {
+  .footer-nav ul li a {
+    font-size: 16px;
+  }
+}

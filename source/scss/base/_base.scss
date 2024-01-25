@@ -1,0 +1,146 @@
+body::-webkit-scrollbar {
+  width: 4px;
+}
+
+body::-webkit-scrollbar-track {
+  background: $--color-custom-grey;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: $--color-blue;
+  border-radius: 20px;
+}
+
+section {
+  margin: 200px 0;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.section-header-block {
+  width: 100%;
+}
+
+
+.about-block-cards {
+
+  .about-card {
+    border-radius: 10px;
+    border: 1px solid $--color-custom-grey;
+    padding: 50px;
+    height: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .about-card-ico {
+
+      img {
+
+      }
+    }
+    .about-card-content {
+
+      .about-card-title {
+        color: $--color-default;
+        font-size: 58px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 100%;
+        margin-bottom: 12px;
+      }
+      .about-card-subtitle {
+        color: $--color-grey;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+      }
+    }
+
+  }
+}
+
+
+.custom-tile {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% + 20px);
+  margin: 0 -10px;
+  .custom-tile-column {
+    width: 20%;
+    padding: 0 10px;
+  }
+
+  .custom-tile-block {
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid $--color-custom-grey;
+
+    &:hover {
+      .tile-block-images {
+        .image-visible {
+          opacity: 0;
+          visibility: hidden;
+          overflow: hidden;
+        }
+
+        .image-hidden {
+          opacity: 1;
+          visibility: visible;
+          overflow: initial;
+        }
+      }
+    }
+
+
+    .tile-block-images {
+      position: relative;
+
+      img {
+        height: 200px;
+        width: 100%;
+        object-fit: contain;
+      }
+
+      .image-visible {
+        transition: 0.3s;
+      }
+      .image-hidden {
+        opacity: 0;
+        visibility: hidden;
+        overflow: hidden;
+        transition: 0.3s;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+    .tile-block-title {
+      color: $--color-default;
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 100%;
+      margin-bottom: 15px;
+    }
+    .tile-block-price {
+      color: $--color-default;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130%;
+    }
+  }
+}
+
+@media (max-width: 1660px) {
+  .section-title {
+    font-size: 64px;
+  }
+  .about-block-cards .about-card .about-card-content .about-card-title {
+    font-size: 48px;
+  }
+}
