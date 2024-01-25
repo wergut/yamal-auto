@@ -1,0 +1,425 @@
+<!--header.html-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Ямал Авто</title>
+<script defer src="js/bundle.js"></script><script defer src="js/libs.js"></script><script defer src="js/style.js"></script><link href="css/style.min.css" rel="stylesheet"></head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <a href="/" class="header-logo">
+      <img src="./img/logo.svg" alt="">
+    </a>
+    <nav class="header-nav">
+      <ul>
+        <li>
+          <a href="#">О компании</a>
+        </li>
+        <li>
+          <a href="#">Автозапчасти</a>
+        </li>
+        <li>
+          <a href="#">Производство</a>
+        </li>
+        <li>
+          <a href="#">Нам доверяют</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="header-phone">
+      <a class="link-phone" href="tel:+78002001289">+7 (800) 200-12-89</a>
+    </div>
+  </div>
+</header>
+<main>
+
+
+
+
+
+<section class="main-banner" id="mainBanner">
+  <div class="container">
+    <h1 class="banner-title">yamalauto</h1>
+    <div class="toggle-blocks">
+      <div class="toggle-block first" id="blockFirst">
+        <div class="toggle-block-container">
+          <span>Качественно. Когда все виды ремонта в одном сервисе.</span>
+        </div>
+      </div>
+      <div class="toggle-block second" id="blockSecond">
+        <div class="toggle-block-container">
+          <span>Надёжно. Когда запчасти в наличии или с доставкой за 24 часа.</span>
+        </div>
+      </div>
+      <div class="toggle-block third" id="blockThird">
+        <div class="toggle-block-container">
+          <span>Профессионально. Когда вам помогают, а не только продают.</span>
+        </div>
+      </div>
+    </div>
+    <div class="banner-content">
+      <div class="banner-desc">
+        <p>Ваш надёжный партнёр в ремонте автомобиля</p>
+      </div>
+      <div class="banner-links">
+        <a class="banner-link-card banner-link-card-first link-card-active" href="#" id="linkFirst">
+          <div class="banner-link-city"><span>Новый Уренгой</span></div>
+          <div class="banner-link-title">Автосервис</div>
+        </a>
+        <a class="banner-link-card banner-link-card-second" href="#" id="linkSecond">
+          <div class="banner-link-city"><span>Новый Уренгой</span></div>
+          <div class="banner-link-title">интернет-магазин</div>
+        </a>
+        <a class="banner-link-card banner-link-card-third" href="#" id="linkThird">
+          <div class="banner-link-city"><span>Москва</span></div>
+          <div class="banner-link-title">интернет-магазин</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const bannerLinks = document.querySelectorAll('.banner-link-card');
+
+    bannerLinks.forEach(link => {
+      link.addEventListener('mouseover', function () {
+        const blockName = getClassIndex(this, 'banner-link-card-');
+        toggleBlock(blockName, true);
+        this.classList.add('link-card-active');
+      });
+
+      link.addEventListener('mouseout', function () {
+        const blockName = getClassIndex(this, 'banner-link-card-');
+        toggleBlock(blockName, false);
+        this.classList.remove('link-card-active');
+      });
+    });
+  });
+
+  function getClassIndex(element, prefix) {
+    const classList = element.classList;
+    for (let i = 0; i < classList.length; i++) {
+      if (classList[i].startsWith(prefix)) {
+        return classList[i].replace(prefix, '');
+      }
+    }
+    return '';
+  }
+
+  function toggleBlock(blockName, show) {
+    const toggleBlock = document.querySelector(`.toggle-block.${blockName}`);
+
+    if (toggleBlock) {
+      if (show) {
+        toggleBlock.style.opacity = '1'; // Анимированное изменение opacity
+        toggleBlock.style.visibility = 'visible';
+      } else {
+        toggleBlock.style.opacity = '0';
+        toggleBlock.style.visibility = 'hidden';
+      }
+    }
+
+    const bannerLinks = document.querySelectorAll('.banner-link-card');
+    bannerLinks.forEach(link => {
+      const linkBlockName = getClassIndex(link, 'banner-link-card-');
+      if (linkBlockName !== blockName) {
+        link.classList.remove('link-card-active');
+      }
+    });
+
+    if (!bannerLinks.length) {
+      const defaultLink = document.querySelector('.banner-link-card-first');
+      if (defaultLink) {
+        defaultLink.classList.add('link-card-active');
+      }
+    }
+  }
+</script>
+
+<section class="about">
+  <div class="container">
+    <div class="row about-top-content">
+      <div class="col-lg-6">
+        <div class="section-header-block">
+          <div class="section-title">
+            <span>О компании</span>
+          </div>
+          <div class="section-description">
+            <p>
+              Компания <span>YAMALAUTO</span> занимается комплексным ремонтом легковой и коммерческой техники, а так же продажей автозапчастей всех известных мировых брендов.
+            </p>
+            <p>
+              С 2023 года мы запустили производство собственных запчастей под брендом <span>YAMAL AUTO PARTS</span>, предложив автовладельцам новые доступные и качественные товары.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="row about-block-cards">
+          <div class="col-lg-6">
+            <div class="about-card">
+              <div class="about-card-ico">
+                <img src="./img/icons/red-flag.svg" alt="">
+              </div>
+              <div class="about-card-content">
+                <div class="about-card-title">2009 год</div>
+                <div class="about-card-subtitle">год основания компании</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="about-card">
+              <div class="about-card-ico">
+                <img src="./img/icons/wall-clock.svg" alt="">
+              </div>
+              <div class="about-card-content">
+                <div class="about-card-title">2009 год</div>
+                <div class="about-card-subtitle">год основания компании</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row about-bottom-content">
+      <div class="col-lg-6">
+        <div class="row about-block-cards">
+          <div class="col-lg-6">
+            <div class="about-card">
+              <div class="about-card-ico">
+                <img src="./img/icons/settings-outline.svg" alt="">
+              </div>
+              <div class="about-card-content">
+                <div class="about-card-title">70 000 ед.</div>
+                <div class="about-card-subtitle">находится у нас на складе</div>
+              </div>
+            </div>
+            <div class="about-card">
+              <div class="about-card-ico">
+                <img src="./img/icons/airplane-outline.svg" alt="">
+              </div>
+              <div class="about-card-content">
+                <div class="about-card-title">70 000 ед.</div>
+                <div class="about-card-subtitle">находится у нас на складе</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="about-block-image">
+              <img src="./img/about-image.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="section-header-block">
+          <div class="section-title">
+            один из <span>самых крупных</span> складов автозапчастей в янао
+
+          </div>
+          <div class="section-description">
+            <p>
+              Основной склад компании находится в городе Новый Уренгой. В наличии большой ассортимент оригинальных запчастей и их аналогов для популярных моделей японских, корейских, европейских, немецких  и других марок автомобилей.
+            </p>
+            <p>
+              Особое внимание мы уделяем качеству автозапчастей. В связи с чем была организована собственная сеть закупок с крупными зарубежными партнерами. Продукция со складов YAMALAUTO реализуется и доставляется по всей территории России.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="manufacturing">
+  <div class="container">
+    <div class="section-header-block">
+      <div class="section-title">
+        Производство собственного бренда <span>yamal auto parts</span>
+      </div>
+      <div class="section-description">
+        <p>С 2023 года мы запустили производство собственного бренда. Автозапчасти YAMAL AUTO PARTS изготавливаются <span>с учётом климатических зон эксплуатации</span>. Главным приоритетом продукции является сочетание ее высокого качества и доступности.</p>
+      </div>
+    </div>
+    <div class="advantage-blocks">
+      <div class="advantage-block left">
+        <img src="./img/icons/verified-white.svg" alt="">
+        <div class="advantage-block-description">проверено в условиях севера</div>
+      </div>
+      <div class="advantage-block right">
+        <img src="./img/icons/verified-black.svg" alt="">
+        <div class="advantage-block-description">высокое качество автозапчастей</div>
+      </div>
+    </div>
+    <div class="custom-tile">
+      <div class="custom-tile-column">
+        <div class="custom-tile-block">
+          <div class="tile-block-images">
+            <img class="image-visible" src="./img/product-img.png" alt="">
+            <img class="image-hidden" src="./img/product-img-hover.png" alt="">
+          </div>
+          <div class="tile-block-title">Воздушные фильтра</div>
+          <div class="tile-block-price">от <span>990</span> руб.</div>
+        </div>
+      </div>
+      <div class="custom-tile-column">
+        <div class="custom-tile-block">
+          <div class="tile-block-images">
+            <img class="image-visible" src="./img/product-img.png" alt="">
+            <img class="image-hidden" src="./img/product-img-hover.png" alt="">
+          </div>
+          <div class="tile-block-title">Воздушные фильтра</div>
+          <div class="tile-block-price">от <span>990</span> руб.</div>
+        </div>
+      </div>
+      <div class="custom-tile-column">
+        <div class="custom-tile-block">
+          <div class="tile-block-images">
+            <img class="image-visible" src="./img/product-img.png" alt="">
+            <img class="image-hidden" src="./img/product-img-hover.png" alt="">
+          </div>
+          <div class="tile-block-title">Воздушные фильтра</div>
+          <div class="tile-block-price">от <span>990</span> руб.</div>
+        </div>
+      </div>
+      <div class="custom-tile-column">
+        <div class="custom-tile-block">
+          <div class="tile-block-images">
+            <img class="image-visible" src="./img/product-img.png" alt="">
+            <img class="image-hidden" src="./img/product-img-hover.png" alt="">
+          </div>
+          <div class="tile-block-title">Воздушные фильтра</div>
+          <div class="tile-block-price">от <span>990</span> руб.</div>
+        </div>
+      </div>
+      <div class="custom-tile-column">
+        <div class="custom-tile-block">
+          <div class="tile-block-images">
+            <img class="image-visible" src="./img/product-img.png" alt="">
+            <img class="image-hidden" src="./img/product-img-hover.png" alt="">
+          </div>
+          <div class="tile-block-title">Воздушные фильтра</div>
+          <div class="tile-block-price">от <span>990</span> руб.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="partners">
+  <div class="container">
+    <div class="section-header-block">
+      <div class="section-title">
+        Нам <span>доверяют</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="partner-card">
+          <img src="./img/novatek.png" alt="">
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="partner-card">
+          <img src="./img/gazprom.png" alt="">
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="partner-card">
+          <img src="./img/nortgaz.png" alt="">
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="partner-card">
+          <img src="./img/novatek.png" alt="">
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="partner-card">
+          <img src="./img/gazprom.png" alt="">
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="partner-card">
+          <img src="./img/nortgaz.png" alt="">
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="partner-card">
+          <img src="./img/novatek.png" alt="">
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="partner-card">
+          <img src="./img/gazprom.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--footer.html-->
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <a href="/" class="footer-logo">
+          <img src="./img/footer-logo.svg" alt="">
+        </a>
+      </div>
+      <div class="col-lg-2">
+        <nav class="footer-nav">
+          <ul>
+            <li>
+              <a href="#">О компании</a>
+            </li>
+            <li>
+              <a href="#">Автозапчасти</a>
+            </li>
+            <li>
+              <a href="#">Производство</a>
+            </li>
+            <li>
+              <a href="#">Нам доверяют</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-lg-3">
+        <ul class="footer-locations">
+          <li>
+            <a href="#">Автосервис Новый Уренгой</a>
+          </li>
+          <li>
+            <a href="#">Интернет-магазин Москва</a>
+          </li>
+          <li>
+            <a href="#">Интернет-магазин Новый Уренгой</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <div class="footer-contacts">
+          <a class="footer-phone" href="tel:+78002001289">+7 (800) 200-12-89</a>
+        </div>
+        <div class="footer-copy">©2009-2024, ООО «Ямал-Авто»</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+
