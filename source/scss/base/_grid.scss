@@ -76,6 +76,13 @@
   }
 }
 
+@media (max-width: 1500px) {
+  .container {
+    max-width: 1440px;
+    padding: 0 150px
+  }
+}
+
 @media (max-width: 1023px) {
   .col-md-1 {
     width: 8.33333333%;

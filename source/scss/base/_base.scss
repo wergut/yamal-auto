@@ -98,6 +98,7 @@ section {
 
     .tile-block-images {
       position: relative;
+      margin-bottom: 20px;
 
       img {
         height: 200px;
@@ -119,12 +120,19 @@ section {
       }
     }
     .tile-block-title {
-      color: $--color-default;
-      font-size: 25px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 100%;
       margin-bottom: 15px;
+      a {
+        color: $--color-default;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 100%;
+
+        &:hover {
+          color: $--color-blue;
+        }
+
+      }
     }
     .tile-block-price {
       color: $--color-default;
@@ -132,15 +140,83 @@ section {
       font-style: normal;
       font-weight: 400;
       line-height: 130%;
+
+
+    }
+  }
+}
+
+@media (min-width: 1601px) and (max-width: 1720px) {
+  .about-block-cards .about-card {
+    height: 360px;
+
+    .about-card-ico {
+
+      img {
+
+      }
     }
   }
 }
 
 @media (max-width: 1660px) {
   .section-title {
-    font-size: 64px;
+    font-size: 60px;
   }
   .about-block-cards .about-card .about-card-content .about-card-title {
     font-size: 48px;
+  }
+}
+
+@media (max-width: 1500px) {
+  section {
+    margin: 150px 0;
+  }
+  .section-title {
+    font-size: 55px;
+    margin-bottom: 45px;
+  }
+  .about-block-cards {
+    .about-card {
+      height: 270px;
+      padding: 30px 20px 30px 30px;
+
+      .about-card-ico {
+        img {
+          width: 45px;
+          height: 45px;
+        }
+      }
+      .about-card-content {
+        .about-card-title {
+          font-size: 40px;
+          margin-bottom: 10px;
+        }
+        .about-card-subtitle {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  .custom-tile {
+    .custom-tile-block {
+      padding: 20px 15px 15px;
+
+      .tile-block-images {
+        img {
+          height: 138px;
+        }
+      }
+      .tile-block-title {
+        margin-bottom: 8px;
+
+        a {
+          font-size: 18px;
+        }
+      }
+      .tile-block-price {
+        font-size: 14px;
+      }
+    }
   }
 }

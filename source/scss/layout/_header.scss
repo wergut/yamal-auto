@@ -73,3 +73,37 @@
   }
 
 }
+
+@media (max-width: 1500px) {
+  .header {
+
+    .header-nav {
+      ul {
+        li {
+          a {
+            font-size: 14px;
+          }
+        }
+        li + li {
+          margin-left: 45px;
+        }
+      }
+    }
+
+    .header-logo {
+
+      img {
+        max-width: 172px;
+        object-fit: contain;
+        width: 100%;
+      }
+    }
+
+    .header-phone  {
+
+      a {
+        font-size: 14px;
+      }
+    }
+  }
+}
