@@ -168,6 +168,28 @@ section {
   }
 }
 
+@media (min-width: 1501px) and (max-width: 1599px) {
+  .section-title {
+    font-size: 54px;
+  }
+  .about-block-cards .about-card {
+    height: 320px;
+    padding: 30px;
+  }
+  .custom-tile .custom-tile-block {
+    padding: 25px;
+  }
+  .custom-tile .custom-tile-block .tile-block-images img {
+    height: 140px;
+  }
+  .custom-tile .custom-tile-block .tile-block-title a {
+    font-size: 18px;
+  }
+  .custom-tile .custom-tile-block .tile-block-title {
+    margin-bottom: 10px;
+  }
+}
+
 @media (max-width: 1500px) {
   section {
     margin: 150px 0;
