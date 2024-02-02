@@ -6,6 +6,13 @@
     margin: 0;
   }
 
+  .footer-logo {
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
   .footer-locations {
 
     li {
@@ -25,7 +32,7 @@
         width: fit-content;
 
         &:hover {
-          color: $--color-blue;
+          color: #242425B2;
         }
 
         &:after {
@@ -67,6 +74,9 @@
         background-size: contain;
         margin-right: 14px;
         background-image: url(../img/icons/footer-phone.svg);
+      }
+      &:hover {
+        color: #242425B2;
       }
     }
   }

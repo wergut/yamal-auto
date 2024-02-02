@@ -78,6 +78,7 @@ section {
     padding: 30px;
     border-radius: 10px;
     border: 1px solid $--color-custom-grey;
+    cursor: pointer;
 
     &:hover {
       .tile-block-images {
@@ -240,5 +241,12 @@ section {
         font-size: 14px;
       }
     }
+  }
+}
+
+@media (max-width: 1350px) {
+  .section-title {
+    font-size: 50px;
+    margin-bottom: 40px;
   }
 }
